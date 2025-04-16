@@ -155,4 +155,55 @@ for i in l1:
 10) https://www.hackerrank.com/challenges/triangle-quest-2/problem?isFullScreen=true
 for i in range(1,int(input())+1): #More than 2 lines will result in 0 score. Do not leave a blank line also
     print(int(''.join([str(i) for i in range(1,i+1)]+[str(i) for i in range(i-1,0,-1)])))
-    
+
+
+11) https://leetcode.com/problems/two-sum/
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        l=[]
+        for i in range(len(nums)):
+            for j in range(i+1,len(nums)):
+                if nums[i]+nums[j]==target:
+                    l.append(i)
+                    l.append(j)
+                    break
+        return l
+
+
+12) https://leetcode.com/problems/longest-substring-without-repeating-characters/
+def lengthOfLongestSubstring(self, s: str) -> int:
+        if s!='':
+            l=[]
+            for i in range(len(s)):
+                for j in range(len(s)):
+                    res=s[i:j+1]
+                    if res!='' and len(list(res))==len(set(res)):
+                        l+=[res]
+            l.sort(key=len,reverse=True)
+            return len(l[0])
+        else:
+            return 0
+
+13) https://leetcode.com/problems/median-of-two-sorted-arrays/
+def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        nums=nums1+nums2
+        nums.sort()
+        if len(nums)%2==0:
+            res=(nums[len(nums)//2]+nums[len(nums)//2 -1])/2
+        else:
+            res=nums[len(nums)//2]
+        return res
+
+14) https://leetcode.com/problems/longest-palindromic-substring/
+    def longestPalindrome(self, s: str) -> str:
+        l=[]
+        for i in range(len(s)):
+            for j in range(len(s)):
+                res=s[i:j+1]
+                if res!='' and res==res[::-1]:
+                    l+=[res]
+        l.sort(key=len,reverse=True)
+        return l[0]
+
+
+
+15) 
